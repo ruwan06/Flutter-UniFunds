@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "323870926196",
+    "project_id": "unifunds-37e37",
+    "storage_bucket": "unifunds-37e37.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:323870926196:android:d8eef6e2b97c02f277f821",
+        "android_client_info": {
+          "package_name": "com.codecraft.uniFunds"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "323870926196-lblpflipgr9v73s4e2g7soo0od6182ep.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codecraft.uniFunds",
+            "certificate_hash": "68267affed482ce76a5526d74c55276673640a0b"
+          }
+        },
+        {
+          "client_id": "323870926196-60ud3l7g5i7mi2ubtmprnoatmjcouiqm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfP8leYhPcx9_4hoOvSQ99Ee49rstaJmo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "323870926196-60ud3l7g5i7mi2ubtmprnoatmjcouiqm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "323870926196-97kr96tukfo8o267fmao45onaqs29j8o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.uniFunds.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
