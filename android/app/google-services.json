@@ -42,7 +42,7 @@
               "client_id": "323870926196-97kr96tukfo8o267fmao45onaqs29j8o.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.uniFunds.RunnerTests"
+                "bundle_id": "com.codecraft.uniFunds.RunnerTests"
               }
             }
           ]

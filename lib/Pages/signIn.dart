@@ -11,20 +11,38 @@ class signIn extends StatelessWidget {
     GoogleSignInAccount? googleUser;
 
     try {
-      // googleUser = await GoogleSignIn().signOut();
+      googleUser = await GoogleSignIn().signOut();
       googleUser = await GoogleSignIn().signIn();
-      final GoogleSignInAuthentication googleAuth =
-          await googleUser!.authentication;
 
-      final AuthCredential credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
-        idToken: googleAuth.idToken,
-      );
+      if (googleUser != null && googleUser.email != null) {
+        // Check if the user's email has the required domain
+        if (googleUser.email!.endsWith('@stu.cmb.ac.lk') ||
+            googleUser.email!.endsWith('@iat.cmb.ac.lk') ||
+            googleUser.email!.endsWith('@ict.cmb.ac.lk') ||
+            googleUser.email!.endsWith('@at.cmb.ac.lk') ||
+            googleUser.email!.endsWith('@et.cmb.ac.lk')) {
+          final GoogleSignInAuthentication googleAuth =
+              await googleUser.authentication;
 
-      await FirebaseAuth.instance.signInWithCredential(credential);
+          final AuthCredential credential = GoogleAuthProvider.credential(
+            accessToken: googleAuth.accessToken,
+            idToken: googleAuth.idToken,
+          );
 
-      print("User ->");
-      // User is signed in
+          await FirebaseAuth.instance.signInWithCredential(credential);
+
+          print("User -> $googleUser");
+          // User is signed in
+        } else {
+          // User has an invalid email domain
+          googleUser = await GoogleSignIn().signOut();
+
+          print("Invalid email domain. Only cmb.ac.lk emails are allowed.");
+        }
+      } else {
+        // Google sign-in was canceled or failed
+        print("Google sign-in failed or canceled => $googleUser");
+      }
     } catch (error) {
       // Handle sign-in errors
       print("Sign-In error: $error");
