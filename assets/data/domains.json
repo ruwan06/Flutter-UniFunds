@@ -1,0 +1,9 @@
+{
+  "allowed_domains": [
+    "@stu.cmb.ac.lk",
+    "@iat.cmb.ac.lk",
+    "@ict.cmb.ac.lk",
+    "@at.cmb.ac.lk",
+    "@et.cmb.ac.lk"
+  ]
+}
