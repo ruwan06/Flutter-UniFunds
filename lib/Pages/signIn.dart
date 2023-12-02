@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_button/sign_in_button.dart';
+import 'package:uni_funds/Components/background.dart';
 
 class signIn extends StatelessWidget {
   const signIn({super.key});
@@ -11,7 +12,7 @@ class signIn extends StatelessWidget {
     GoogleSignInAccount? googleUser;
 
     try {
-      googleUser = await GoogleSignIn().signOut();
+      // googleUser = await GoogleSignIn().signOut();
       googleUser = await GoogleSignIn().signIn();
 
       if (googleUser != null && googleUser.email != null) {
@@ -55,12 +56,7 @@ class signIn extends StatelessWidget {
       home: Scaffold(
         body: Stack(
           children: [
-            Positioned.fill(
-              child: SvgPicture.asset(
-                'assets/Background.svg',
-                fit: BoxFit.cover,
-              ),
-            ),
+            Background(),
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
